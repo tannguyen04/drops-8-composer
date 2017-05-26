@@ -36,4 +36,4 @@ git add -A
 git commit -m"$COMMIT_MESSAGE"
 
 echo -e "\n${txtgrn}Pushing the master branch to Heroku ${txtrst}"
-git push heroku master
+git push heroku master --force
