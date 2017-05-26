@@ -1,0 +1,23 @@
+{
+  "name": "ffw-styleguide",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "susy": "~2.2.6"
+  },
+  "install": {
+    "path": "../vendor",
+    "sources": {
+      "susy": [
+        "bower_components/susy/sass/**"
+      ]
+    }
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

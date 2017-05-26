@@ -1,0 +1,12 @@
+{
+  "video": {
+    "src": "//dev-classical.pantheonsite.io/themes/custom/classical/video/ffw.mp4",
+    "width": "1400",
+    "height": "835",
+    "muted": "true",
+    "loop": "loop",
+    "autoplay": "true",
+    "preload": "auto",
+    "type": "video/mp4"
+  }
+}

@@ -1,0 +1,8 @@
+<picture>
+  {% if picture.srcTablet %}
+    <source media="{{ tablet }}" srcset="{{ picture.srcTablet }}">
+  {% endif %}
+  {% if picture.src %}
+    <img src="{{ picture.src }}" alt="{{ picture.alt }}">
+  {% endif %}
+</picture>

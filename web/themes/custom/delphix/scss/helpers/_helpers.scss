@@ -1,0 +1,49 @@
+// Helper classes
+
+.font {
+  &--small {
+    font-size: rem(14px);
+  }
+
+  &--tiny {
+    font-size: rem(13px);
+  }
+}
+
+.granite-green {
+  color: $gray-89;
+}
+
+.mist-gray {
+  color: $silver;
+}
+
+.blue {
+  color: $blue;
+}
+
+.white {
+  color: $white;
+}
+
+.bg {
+  &--white {
+    background-color: $white;
+  }
+
+  &--light-tan {
+    background-color: $gray-f4;
+  }
+
+  &--light-grey {
+    background-color: $teal-f3;
+  }
+
+  &--slate-grey {
+    background-color: $teal-dc;
+  }
+
+  &--teal {
+    background-color: $teal;
+  }
+}

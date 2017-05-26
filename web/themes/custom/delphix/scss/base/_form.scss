@@ -1,0 +1,35 @@
+button,
+input[type='submit'] {
+  @extend .btn;
+}
+
+%form-text,
+.form-text {
+  border: rem(1px) solid $silver;
+  color: $text-color;
+  font-size: rem(16px);
+  margin-bottom: rem(15px);
+  padding: rem(5px 15px);
+  width: 100%;
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  &.focused,
+  &:focus {
+    border-color: $gray;
+    color: $text-color;
+  }
+}
+
+.form-text {
+  &.error {
+    border-color: $red;
+    color: $text-color;
+  }
+}
+
+.form-textarea {
+  @extend %form-text;
+}
