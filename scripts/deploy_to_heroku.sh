@@ -35,6 +35,7 @@ cd .heroku
 pwd
 git add -A
 git commit -m"$COMMIT_MESSAGE"
-
+git branch
+git remote -v
 echo -e "\n${txtgrn}Pushing the master branch to Heroku ${txtrst}"
 git push heroku master --force
