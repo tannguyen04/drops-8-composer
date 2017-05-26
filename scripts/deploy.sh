@@ -3,4 +3,4 @@
 # Variables
 
 
-echo -e "\nBuild"
+echo -e "\nDeploy"
