@@ -5,19 +5,6 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "package",
-            "package": {
-                "name": "enyo/dropzone",
-                "type": "drupal-library",
-                "version": "4.3.0",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/enyo/dropzone",
-                    "reference": "v4.3.0"
-                }
-            }
-        },
-        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
