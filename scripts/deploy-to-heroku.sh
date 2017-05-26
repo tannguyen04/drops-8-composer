@@ -3,8 +3,6 @@
 # Variables
 txtgrn=$(tput setaf 2) # Green
 txtrst=$(tput sgr0) # Text reset.
-HEROKU_APP_NAME="delphix"
-THEME_NAME="delphix"
 
 COMMIT_MESSAGE="Deploy by $(git config --get user.name), $(git rev-parse --abbrev-ref HEAD) ($(git rev-parse --short HEAD))"
 
