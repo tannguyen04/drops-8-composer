@@ -1,0 +1,31 @@
+machine:
+  timezone:
+    America/Chicago
+
+  php:
+    version: 5.6.22
+
+dependencies:
+  cache_directories:
+    - ~/.composer/cache
+
+  pre:
+    # Set github token to avoid rate limit
+    - composer config --global github-oauth.github.com $GIT_TOKEN
+
+    - git config --global user.email $GIT_EMAIL
+    - git config --global user.name $GIT_USERNAME
+
+  override:
+    - ./scripts/build.sh
+
+
+test:
+  override:
+    - ls
+
+deployment:
+  pantheon:
+    branch: master
+    commands:
+      - ./scripts/deploy_to_heroku.sh
