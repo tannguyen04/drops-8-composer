@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Variables
+BUILD_DIR=$(pwd)
 txtgrn=$(tput setaf 2) # Green
 txtrst=$(tput sgr0) # Text reset.
 
@@ -31,7 +32,7 @@ rsync -a "web/themes/custom/${THEME_NAME}/images/" ".heroku/public/images/"
 rsync -a "web/themes/custom/${THEME_NAME}/js/" ".heroku/public/js/"
 
 # Move into the heroku repo to apply changes.
-cd .heroku
+cd "${BUILD_DIR}/.heroku"
 git add -A
 git commit -m"$COMMIT_MESSAGE"
 
