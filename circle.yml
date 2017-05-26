@@ -37,4 +37,5 @@ deployment:
           login $HEROKU_EMAIL
           password $HEROKU_TOKEN
         EOF
+      - chmod 600 ~/.netrc
       - ./scripts/deploy_to_heroku.sh
