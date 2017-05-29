@@ -121,6 +121,9 @@ cp $BUILD_DIR/pantheon.yml .
 echo -e "\n${txtylw}Rsyncing $BUILD_DIR/vendor ${txtrst}"
 rsync -a $BUILD_DIR/vendor/* ./vendor/
 
+echo -e "\n${txtylw}Rsyncing $BUILD_DIR/config ${txtrst}"
+rsync -a $BUILD_DIR/config/* ./config/
+
 # Remove sites/default/files if it exists
 if [ -d "$HOME/pantheon/web/sites/default/files" ]
 then
