@@ -124,13 +124,6 @@ rsync -a $BUILD_DIR/vendor/* ./vendor/
 echo -e "\n${txtylw}Rsyncing $BUILD_DIR/config ${txtrst}"
 rsync -a $BUILD_DIR/config/* ./config/
 
-# Remove sites/default/files if it exists
-if [ -d "$HOME/pantheon/web/sites/default/files" ]
-then
-  echo -e "\n${txtylw}Removing 'web/sites/default/files' ${txtrst}"
-  rm web/sites/default/files
-fi
-
 echo -e "\n${txtylw}Forcibly adding all files and committing${txtrst}"
 git add -A --force .
 git commit -m "Circle CI build $CIRCLE_BUILD_NUM by $CIRCLE_PROJECT_USERNAME" -m "$COMMIT_MESSAGE"
