@@ -1,6 +1,7 @@
 #!/bin/bash
 
 JSON=composer.json
+EXE=composer
 
 # CI options
 export COMPOSER_DISCARD_CHANGES=1
