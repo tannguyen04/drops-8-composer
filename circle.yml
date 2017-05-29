@@ -8,6 +8,8 @@ machine:
 dependencies:
   cache_directories:
     - ~/.composer/cache
+    - ~/.terminus/tokens
+    - ~/terminus
 
   pre:
     # Set github token to avoid rate limit
@@ -15,6 +17,9 @@ dependencies:
 
     - git config --global user.email $GIT_EMAIL
     - git config --global user.name $GIT_USERNAME
+
+    # Install Terminus
+    - ./scripts/install_terminus.sh
 
   override:
     - ./scripts/build.sh
@@ -26,6 +31,6 @@ test:
 
 deployment:
   pantheon:
-    branch: master
+    branch: /.*/
     commands:
       - ./scripts/deploy.sh

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 JSON=composer.json
-EXE=composer
 
 # CI options
 export COMPOSER_DISCARD_CHANGES=1
@@ -14,15 +13,8 @@ then
 fi
 
 FOUND=`which $EXE`
-if [ ! -x "$FOUND" ]
-then
-  echo ${txtred}Error: executable composer not found on path ${txtrst}
-  exit 1
-fi
-
-COMPOSER_PARMS="--no-ansi --no-dev --no-interaction --optimize-autoloader --no-progress --no-scripts"
+COMPOSER_PARMS="--no-ansi --no-dev --no-interaction --optimize-autoloader --no-progress"
 
 # Install Composer dependencies
 echo -e "\n${txtylw}Invoking: $FOUND install $COMPOSER_PARMS ${txtrst}"
 $FOUND install $COMPOSER_PARMS
-
