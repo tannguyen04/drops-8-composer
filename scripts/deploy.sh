@@ -98,9 +98,10 @@ fi
 # Delete the web and vendor subdirectories if they exist
 if [ -d "$HOME/pantheon/web" ]
 then
-  # Remove it
+  # Remove it without folder sites.
   echo -e "\n${txtylw}Removing $HOME/pantheon/web ${txtrst}"
-  rm -rf $HOME/pantheon/web
+  find pantheon/web/* -maxdepth 1 -type 'f' delete
+  find pantheon/web/* -maxdepth 1 -type 'd' | grep -v "sites" | xargs rm -rf
 fi
 if [ -d "$HOME/pantheon/vendor" ]
 then
