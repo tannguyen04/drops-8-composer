@@ -13,6 +13,7 @@ txtrst=$(tput sgr0) # Text reset.
 
 COMMIT_MESSAGE="$(git show --name-only --decorate)"
 PANTHEON_ENV="dev"
+FROM_ENV="live"
 TEST_URL=""
 
 cd $HOME
@@ -79,7 +80,7 @@ then
   else
     # otherwise, create the multidev branch
     echo -e "\n${txtylw}Multidev not found, creating the multidev branch ${normalize_branch} via Terminus ${txtrst}"
-    terminus multidev:create $PANTHEON_SITE_UUID.dev $normalize_branch
+    terminus multidev:create $PANTHEON_SITE_UUID.$FROM_ENV $normalize_branch
     git fetch
   fi
 
