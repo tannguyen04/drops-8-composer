@@ -117,10 +117,10 @@ echo -e "\n${txtylw}Rsyncing $BUILD_DIR/web ${txtrst}"
 rsync -a $BUILD_DIR/web/* ./web/
 
 # Delete file settings.local.php if they exist
-if [ -e "$HOME/pantheon/web/sites/default/settings/local.php" ]
+if [ -e "$HOME/pantheon/web/sites/default/settings.local.php" ]
 then
   echo -e "\n${txtylw}Removing settings.local.php ${txtrst}"
-  rm $HOME/pantheon/web/sites/default/settings/local.php
+
 fi
 
 echo -e "\n${txtylw}Copying $BUILD_DIR/pantheon.yml ${txtrst}"
