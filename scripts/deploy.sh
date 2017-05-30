@@ -116,6 +116,13 @@ mkdir -p vendor
 echo -e "\n${txtylw}Rsyncing $BUILD_DIR/web ${txtrst}"
 rsync -a $BUILD_DIR/web/* ./web/
 
+# Delete file settings.local.php if they exist
+if [ -e "$HOME/pantheon/web/sites/default/settings/local.php" ]
+then
+  echo -e "\n${txtylw}Removing settings.local.php ${txtrst}"
+  rm $HOME/pantheon/web/sites/default/settings/local.php
+fi
+
 echo -e "\n${txtylw}Copying $BUILD_DIR/pantheon.yml ${txtrst}"
 cp $BUILD_DIR/pantheon.yml .
 
@@ -124,6 +131,9 @@ rsync -a $BUILD_DIR/vendor/* ./vendor/
 
 echo -e "\n${txtylw}Rsyncing $BUILD_DIR/config ${txtrst}"
 rsync -a $BUILD_DIR/config/* ./config/
+
+echo -e "\n${txtylw}Copying $BUILD_DIR/composer.json and $BUILD_DIR/composer.lock ${txtrst}"
+cp $BUILD_DIR/composer.* .
 
 echo -e "\n${txtylw}Forcibly adding all files and committing${txtrst}"
 git add -A --force .
