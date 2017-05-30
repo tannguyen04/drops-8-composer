@@ -8,3 +8,15 @@ workflows:
       - type: webphp
         description: Import configuration from .yml files and clear cache
         script: private/scripts/drush_config_import.php
+
+  sync_code:
+    after:
+      - type: webphp
+        description: Import configuration from .yml files and clear cache
+        script: private/scripts/drush_config_import.php
+
+  clone_database:
+    after:
+      - type: webphp
+        description: Import configuration from .yml files and clear cache
+        script: private/scripts/drush_config_import.php
