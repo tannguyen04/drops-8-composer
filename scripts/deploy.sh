@@ -100,8 +100,8 @@ if [ -d "$HOME/pantheon/web" ]
 then
   # Remove it without folder sites.
   echo -e "\n${txtylw}Removing $HOME/pantheon/web ${txtrst}"
-  find pantheon/web/* -maxdepth 1 -type 'f' delete
-  find pantheon/web/* -maxdepth 1 -type 'd' | grep -v "sites" | xargs rm -rf
+  find web/* -maxdepth 1 -type 'f' delete
+  find web/* -maxdepth 1 -type 'd' | grep -v "sites" | xargs rm -rf
 fi
 if [ -d "$HOME/pantheon/vendor" ]
 then
